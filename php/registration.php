@@ -42,8 +42,8 @@ if (isset($_POST['submit_button'])) {
     	$password = md5($password);
 
     	// write user to database
-    	$reg_query = "INSERT INTO `users` (username, password) 
-    	VALUES ('$username', '$password')";
+    	$reg_query = "INSERT INTO `users` (username, password, type) 
+    	VALUES ('$username', '$password', 'user')";
 
     	mysqli_query($db, $reg_query);
     	$_SESSION['username'] = $username;
