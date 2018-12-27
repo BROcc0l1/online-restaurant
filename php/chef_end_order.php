@@ -2,6 +2,10 @@
 
 session_start();
 
+if ($_SESSION['type'] != "chef" and $_SESSION['type'] != "admin") {
+	header('Location: ../index.html');
+}
+
 $order_id = $_SESSION['order_id'];
 
 // conect to database

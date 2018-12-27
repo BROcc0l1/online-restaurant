@@ -2,6 +2,10 @@
 
 session_start();
 
+if ($_SESSION['type'] != "chef" and $_SESSION['type'] != "admin") {
+	header('Location: ../index.html');
+}
+
 // conect to database
 $con = mysqli_connect('localhost', 'root', '', 'online_restaurant');
 if (!$con) die('Could not connect: ' . mysqli_error($con));
@@ -54,9 +58,9 @@ foreach ($food_ids as $fid) {
 		$get_quantity_query = "SELECT quantity FROM `warehouse` WHERE id='$id' LIMIT 1";
 		$quantity_query_result = mysqli_fetch_assoc(mysqli_query($con, $get_quantity_query));
 		$quantity = $quantity_query_result['quantity'];
-		echo $quantity; echo " "; echo $quan; echo " ";
+		# echo $quantity; echo " "; echo $quan; echo " ";
 		$quantity -= $quan;
-		echo $quantity; echo "<br><br>";
+		# echo $quantity; echo "<br><br>";
 
 		$update_quantity_query = "UPDATE `warehouse` SET quantity='$quantity' WHERE id='$id'";
 		mysqli_query($con, $update_quantity_query);

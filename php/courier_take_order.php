@@ -2,6 +2,10 @@
 
 session_start();
 
+if ($_SESSION['type'] != "courier" and $_SESSION['type'] != "admin") {
+	header('Location: ../index.html');
+}
+
 // conect to database
 $con = mysqli_connect('localhost', 'root', '', 'online_restaurant');
 if (!$con) die('Could not connect: ' . mysqli_error($con));

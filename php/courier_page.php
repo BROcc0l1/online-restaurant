@@ -2,7 +2,9 @@
 
 session_start();
 
-// setcookie('updating', 1, time() + (86400 * 30), "/");
+if ($_SESSION['type'] != "courier" and $_SESSION['type'] != "admin") {
+	header('Location: ../index.html');
+}
 
 // connect to database
 $con = mysqli_connect('localhost','root','','online_restaurant');

@@ -2,9 +2,14 @@
 	
 	session_start();
 
+	if ($_SESSION['type'] != "warehouse-admin" and $_SESSION['type'] != "admin") {
+		header('Location: ../index.html');
+	}
+
 	$errors = array();
 
 	$con = mysqli_connect('localhost', 'root', '', 'online_restaurant');
+	if(!$con) die ('Could not connect: ' . mysqli_error($con));
 
 	if (isset($_POST['add_to_warehouse'])) {
 

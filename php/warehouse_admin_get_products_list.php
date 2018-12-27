@@ -1,5 +1,11 @@
 <?php
 
+	session_start();
+
+	if ($_SESSION['type'] != "warehouse-admin" and $_SESSION['type'] != "admin") {
+		header('Location: ../index.html');
+	}
+
 	$product_to_add_quantity = 0;
 
 	// conect to database
