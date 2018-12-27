@@ -6,15 +6,17 @@
 
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'proga_registretion');
+	$con = mysqli_connect('localhost', 'root', '', 'proga_registretion');
+	if (!$con) 
+		die('Could not connect: ' . mysqli_error($con));
 
 
 	// login
 	// TODO: fix field names
 	if (isset($_POST['login'])) {
 
-		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$password = mysqli_real_escape_string($db, $_POST['password']);
+		$username = mysqli_real_escape_string($con, $_POST['username']);
+		$password = mysqli_real_escape_string($con, $_POST['password']);
 
 		if (empty($username)) array_push($errors, "Username is required");
     	if (empty($password)) array_push($errors, "Password is required");
@@ -25,7 +27,7 @@
 
     		$login_query = "SELECT * FROM `registration` WHERE username='$username' AND password='$password'";
 
-    		$login_query_result = mysqli_query($db, $login_query);
+    		$login_query_result = mysqli_query($con, $login_query);
 
     		if(mysqli_num_rows($login_query_result) == 1) {
 

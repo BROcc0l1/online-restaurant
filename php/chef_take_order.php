@@ -51,6 +51,8 @@ foreach ($food_names as $fn) {
 
 }
 
+mysqli_close($con);
+
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +62,7 @@ foreach ($food_names as $fn) {
 
 <body>
 
-	<form action="chef_end_order.php?order_id='$order_id'">
+	<form action="chef_end_order.php">
 		<button name="end_order_button"> Finish order </button>
 	</form>
 

@@ -5,16 +5,18 @@ session_start();
 $errors = array();
 
 // conect to database
-$db = mysqli_connect('localhost', 'root', '', 'online_restaurant');
+$con = mysqli_connect('localhost', 'root', '', 'online_restaurant');
+if (!$con) 
+    die('Could not connect: ' . mysqli_error($con));
 
 // register user
 // TODO: fix field names
 if (isset($_POST['submit_button'])) {
 
-	$username = mysqli_real_escape_string($db, $_POST['username']);
-	$email = mysqli_real_escape_string($db, $_POST['email']);
-	$password = mysqli_real_escape_string($db, $_POST['password']);
-	$confirm_password = mysqli_real_escape_string($db, 
+	$username = mysqli_real_escape_string($con, $_POST['username']);
+	$email = mysqli_real_escape_string($con, $_POST['email']);
+	$password = mysqli_real_escape_string($con, $_POST['password']);
+	$confirm_password = mysqli_real_escape_string($con, 
 		$_POST['confirm_password']);
 
 
@@ -26,7 +28,7 @@ if (isset($_POST['submit_button'])) {
 
 	$user_check_query = "SELECT * FROM `users` WHERE `username`='$username' LIMIT 1";
 
-	$user_check_result = mysqli_query($db, $user_check_query);
+	$user_check_result = mysqli_query($con, $user_check_query);
 	$check_user = mysqli_fetch_assoc($user_check_result);
 
 	if ($user) {
@@ -45,7 +47,7 @@ if (isset($_POST['submit_button'])) {
     	$reg_query = "INSERT INTO `users` (username, password, type) 
     	VALUES ('$username', '$password', 'user')";
 
-    	mysqli_query($db, $reg_query);
+    	mysqli_query($con, $reg_query);
     	$_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in!";
         $_SESSION['msg'] = "You have successfully registered, log in to continue.";

@@ -18,7 +18,7 @@ mysqli_close($con);
 
 // redirect to main chef page
 ob_start();
-header('Location: '."../test.php");
+header('Location: '."chef_page.php");
 ob_end_flush();
 die();
 
