@@ -65,7 +65,7 @@ mysqli_close($con);
 
     <form action="chef_take_order.php">
     
-        <button name='take_order_button'> Take order </button>
+        <button> Take order </button>
 
     </form>
 

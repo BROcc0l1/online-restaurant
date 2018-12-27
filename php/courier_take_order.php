@@ -38,7 +38,7 @@ mysqli_close($con);
 <body>
 
 	<form action="courier_end_order.php">
-		<button name="end_order_button"> Finish order </button>
+		<button> Finish order </button>
 	</form>
 
 </body>
