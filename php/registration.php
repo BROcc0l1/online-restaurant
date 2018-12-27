@@ -11,12 +11,12 @@ if (!$con)
 
 // register user
 // TODO: fix field names
-if (isset($_POST['submit_button'])) {
+if (isset($_POST['submit_reg'])) {
 
-	$username = mysqli_real_escape_string($con, $_POST['username']);
-	$password = mysqli_real_escape_string($con, $_POST['password']);
+	$username = mysqli_real_escape_string($con, $_POST['reg_username']);
+	$password = mysqli_real_escape_string($con, $_POST['reg_password']);
 	$confirm_password = mysqli_real_escape_string($con, 
-		$_POST['confirm_password']);
+		$_POST['reg_confirm_password']);
 
 
 	if (empty($username)) array_push($errors, "Username is required");

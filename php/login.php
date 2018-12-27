@@ -13,10 +13,10 @@
 
 	// login
 	// TODO: fix field names
-	if (isset($_POST['login'])) {
+	if (isset($_POST['submit_login'])) {
 
-		$username = mysqli_real_escape_string($con, $_POST['username']);
-		$password = mysqli_real_escape_string($con, $_POST['password']);
+		$username = mysqli_real_escape_string($con, $_POST['login_username']);
+		$password = mysqli_real_escape_string($con, $_POST['login_password']);
 
 		if (empty($username)) array_push($errors, "Username is required");
     	if (empty($password)) array_push($errors, "Password is required");
@@ -40,6 +40,11 @@
 
    				// TODO: add headers for different user types
    				// header('location: index.html');
+   				if ($_SESSION['type'] == "user") header('location: index.html');
+   				if ($_SESSION['type'] == "admin") header('location: index.html');
+   				if ($_SESSION['type'] == "chef") header('location: php/chef_page.php');
+   				if ($_SESSION['type'] == "courier") header('location: php/courier_page.php');
+   				if ($_SESSION['type'] == "warehouse-admin") header('location: php/warehouse_admin_page.php');
 
   			} else {
 
