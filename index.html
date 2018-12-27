@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="fonts/eleganticons/et-icons.css">
 	<!-- Main style -->
 	<link rel="stylesheet" type="text/css" href="css/kpi.css">
+    <?php include 'php/login.php';?>
+    <?php include 'php/registration.php';?>
 </head>
 
 <body>
@@ -40,11 +42,10 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right main-nav">
-					<li><a href="/index.html">Main</a></li>
-					<li><a href="/menu.html">Menu</a></li>
-					<li><a href="#team">Best sellers</a></li>
+					<li><a href="../index.html">Main</a></li>
+					<li><a href="../menu.html">Menu</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#modal2" class="btn btn-blue">Sign In</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Sign Up</a></li>
-					<!-- <li><a href="#facultets">Факультеты</a></li> -->
 				</ul>
 			</div>
 		</div>
@@ -70,85 +71,54 @@
 			<div class="row intro-tables">
 				<div class="col-md-4">
 					<div class="intro-table intro-table-first">
-						<h5 class="white heading">Расписание</h5>
+						<h5 class="white heading">Menu</h5>
 						<div class="owl-carousel owl-schedule bottom">
 							<div class="item">
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">Физкультура</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">8:30 - 10:05</h5>
+										<h5 class="regular white">Beef Steak</h5>
 									</div>
 								</div>
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">Физика</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">10:25 - 12:00</h5>
+										<h5 class="regular white">Hotdog</h5>
 									</div>
 								</div>
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">Матан</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">12:20 - 13:55</h5>
+										<h5 class="regular white">Caesar Salad</h5>
 									</div>
 								</div>
 							</div>
 							<div class="item">
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">Психология</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">8:30 - 10:05</h5>
+										<h5 class="regular white">Pork Steak</h5>
 									</div>
 								</div>
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">Програмирование</h5>
+										<h5 class="regular white">French fries</h5>
 									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">10:25 - 12:00</h5>
 									</div>
-								</div>
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">Диффура</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">12:20 - 13:55</h5>
+										<h5 class="regular white">Hamburger</h5>
 									</div>
 								</div>
 							</div>
 							<div class="item">
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">Дискретка</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">8:30 - 10:05</h5>
+										<h5 class="regular white">Cheeseburger</h5>
 									</div>
 								</div>
 								<div class="schedule-row row">
 									<div class="col-xs-6">
-										<h5 class="regular white">АКС</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">10:25 - 12:00</h5>
+										<h5 class="regular white"></h5>
 									</div>
 								</div>
-								<div class="schedule-row row">
-									<div class="col-xs-6">
-										<h5 class="regular white">Английский</h5>
-									</div>
-									<div class="col-xs-6 text-right">
-										<h5 class="white">12:20 - 13:55</h5>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -185,122 +155,36 @@
 			</div>
 		</div>
 	</section>
-<!--	<section id="history" class="section section-padded">
-		<div class="container">
-			<div class="row text-center title">
-				<h2>История КПИ</h2>
-				<h4 class="light muted">C начала и до сегодня</h4>
-			</div>
-			<div class="row services">
-				<div class="col-md-4">
-					<div class="service">
-						<div class="icon-holder">
-							<img src="img/icons/learn.png" alt="" class="icon">
-						</div>
-						<h4 class="heading">Открытие</h4>
-						<p class="description">31 августа 1898 года состоялись торжества в связи с открытием Киевского политехнического института.
-</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="service">
-						<div class="icon-holder">
-							<img src="img/icons/first-fac.png" alt="" class="icon">
-						</div>
-						<h4 class="heading">Первые факультеты</h4>
-						<p class="description">механический (109 студентов)
-<br>инженерный (101 студент)
-<br>сельского хозяйства (87 студентов)
-<br>химический (63 студента).</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="service">
-						<div class="icon-holder">
-							<img src="img/icons/kpi-now.png" alt="" class="icon">
-						</div>
-						<h4 class="heading">КПИ сегодня</h4>
-						<p class="description">КПИ им.Игоря Сикорского является одним из крупнейших учебных заведений Европы. В нем обучается около 25 000 студентов.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="cut cut-bottom"></div>
-	</section>-->
-	<!--<section id="team" class="section gray-bg">
-		<div class="container">
-			<div class="row title text-center">
-				<h2 class="margin-top">Выпускники</h2>
-				<h4 class="light muted">Они делают мир лучше!</h4>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="team text-center">
-						<div class="cover" style="background:url('img/team/авиация.jpg'); background-size:cover;">
-							<div class="overlay text-center">
-								<h3 class="white">ММИ</h3>
-								<h5 class="light light-white"> В 1907 году поступил в Киевский политехнический институт, где с 1905 года существовала «Воздухоплавательная секция» механического кружка/h5>
-							</div>
-						</div>
-						<img src="img/team/сикорский.jpg" alt="Team Image" class="avatar">
-						<div class="title">
-							<h4>Игорь Сикорский</h4>
-							<h5 class="muted regular">25/04/1889 - 26/10/1972</h5>
-						</div>
-						<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Узнать больше</button>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="team text-center">
-						<div class="cover" style="background:url('img/team/сварка.jpg'); background-size:cover;">
-							<div class="overlay text-center">
-								<h3 class="white">ЗФ</h3>
-								<h5 class="light light-white">В 1941 году окончил Киевский политехнический институт по специальности «инженер-электрик»</h5>
-							</div>
-						</div>
-						<img src="img/team/патон.jpg" alt="Team Image" class="avatar">
-						<div class="title">
-							<h4>Борис Патон</h4>
-							<h5 class="muted regular">27/11/1918 - present days</h5>
-						</div>
-						<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Узнать больше</a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="team text-center">
-						<div class="cover" style="background:url('img/team/математика.jpg'); background-size:cover;">
-							<div class="overlay text-center">
-								<h3 class="white">ФТИ</h3>
-								<h5 class="light light-white">Многократный победитель международных олимпиад по програмированию и математике</h5>
-							</div>
-						</div>
-						<img src="img/team/рыбак.jpg" alt="Team Image" class="avatar">
-						<div class="title">
-							<h4>Олександр Рыбак</h4>
-							<h5 class="muted regular">Still alive</h5>
-						</div>
-						<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Узнать больше</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
 
-	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
 				<h3 class="white">Sign Up</h3>
 				<form action="" class="popup-form">
-					<input type="text" class="form-control form-white" placeholder="Full Name">
-					<input type="text" class="form-control form-white" placeholder="Phone number">
+					<input type="text" name="reg_username" class="form-control form-white" placeholder="Full Name">
+                    <input type="password" name="reg_password" class="form-control form-white" placeholder="Password">
+                    <input type="password" name="reg_confirm_password" class="form-control form-white" placeholder="Confirm password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="None" id="squaredOne" name="check" />
 							<label for="squaredOne"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-submit">Submit</button>
+					<button type="submit" name="submit_reg"class="btn btn-submit">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				<h3 class="white">Sign In</h3>
+				<form action="" class="popup-form">
+					<input type="text" name="login_username" class="form-control form-white" placeholder="Full Name">
+                    <input type="password" name="login_password" class="form-control form-white" placeholder="Password">
+					<button type="submit" name="submit_login"class="btn btn-submit">Sign In</button>
 				</form>
 			</div>
 		</div>
@@ -352,6 +236,7 @@
 	<script src="js/typewriter.js"></script>
 	<script src="js/jquery.onepagenav.js"></script>
 	<script src="js/main.js"></script>
+
 </body>
 
 </html>
